@@ -2,8 +2,8 @@ const  express = require('express');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 
-const postRouter = require('./routes/posts');
 const userRoutes = require("./routes/user");
+const eventRoutes = require("./routes/events");
 
 const app = express();
 mongoose.connect('mongodb+srv://root:lD4na479b7LxXpkD@cluster0-iv1ig.mongodb.net/freeStyle',  { useNewUrlParser: true })
@@ -31,7 +31,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/api/posts', postRouter);
 app.use("/api/user", userRoutes);
+app.use("/api/event", eventRoutes);
 
 module.exports = app;
