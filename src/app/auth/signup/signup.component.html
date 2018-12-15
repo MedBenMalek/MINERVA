@@ -1,0 +1,32 @@
+<!-- Start About -->
+<section class="login">
+  <div class="container">
+    <!-- Start Title -->
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 title-section">
+        <h4 class="title"><span style="font-size: 60px; margin-bottom: 60px; color: #77b3d4">Sign up</span></h4>
+        <div class="line"><i class="icon icon-24 icon-profle"></i></div>
+      </div>
+    </div>
+    <!-- End Title -->
+    <form (submit)="onSignup(signupForm)" #signupForm="ngForm">
+      <ul class="listForm listFormLogin">
+        <li>
+          <input class="form-control" type="text" name="email" #emailInput="ngModel" ngModel required  placeholder="Email" />
+          <div class="validation" *ngIf="emailInput.invalid && emailInput.touched">Please enter a valid email.</div>
+        </li>
+        <li>
+          <input class="form-control" type="password" name="password" placeholder="Password" ngModel #passwordInput="ngModel" required/>
+          <div class="validation" *ngIf="passwordInput.invalid && passwordInput.touched">Please enter a valid password.</div>
+        </li>
+        <li>
+          <input type="submit" value="Sign up" class="btn btn-info btn-lg btn-block" name="Submit" />
+        </li>
+        <li style="text-align: center; text-transform: uppercase; text-decoration: underline">
+          <a [routerLink]="['/home']" style="color: #77b3d4">Send Me to Home page</a>
+        </li>
+      </ul>
+    </form>
+  </div>
+</section>
+<!-- End About -->

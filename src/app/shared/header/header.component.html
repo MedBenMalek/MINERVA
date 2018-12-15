@@ -1,0 +1,39 @@
+<!-- Start Scroll to top -->
+<div class="scroll top">
+  <a href="#home"><span class="fa fa-chevron-up"></span></a>
+</div>
+<!-- End Scroll to top -->
+
+<!-- Start Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <!-- Start Mainmenu -->
+  <div class="mainmenu">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myMenu">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="assets/navbar-brand" href="">
+          <img src="assets/images/brand/logo.png" class="logo" alt="">
+        </a>
+      </div>
+
+      <!-- Navigation Menu -->
+      <div class="collapse navbar-collapse" id="myMenu">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a routerLink="/home">Home</a></li>
+          <li><a routerLink="/blog">Blog</a></li>
+          <li><a routerLink="/home">Contact Us</a></li>
+          <a [routerLink]="['/login']" class="btn btn-info btn-sm login-btn">Login</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End Mainmenu -->
+</nav>
+<!-- End Navigation -->
+<div class="clearfix"></div>

@@ -1,0 +1,20 @@
+<form (submit)="onAddPost()" [formGroup]="form">
+  <ul class="listForm" >
+    <li class="full-list">
+      <app-ngx-editor
+                height="200px"
+                rows="8"
+                [placeholder]="'Write something. . .'"
+                [spellcheck]="true"
+                formControlName="text"
+      ></app-ngx-editor>
+      <div class="alert alert-danger" *ngIf="isFieldValid('text')">
+        The field is required
+      </div>
+    </li>
+    <li class="full-list last-list">
+      <input type="submit" value="Send post" class="btn btn-primary btn-lg btn-block" name="Submit" [disabled]="!form.valid" />
+    </li>
+  </ul>
+</form>
+<div class="divider margintop40 marginbot40"></div>

@@ -1,0 +1,12 @@
+<div *ngIf="posts.length > 0">
+  <div *ngFor="let p of posts" >
+    <h4>#Post - {{p.id}}</h4>
+    <p [innerHTML]="p.text | safeHtml"></p>
+    <a class="btn btn-info btn-sm login-btn" (click)="onSendPost(p)">View</a> <a class="btn btn-success btn-sm login-btn">Edit</a> <a class="btn btn-danger btn-sm login-btn" (click)="onDeletePost(p.id)">Delete</a>
+    <div class="divider margintop40 marginbot40"></div>
+  </div>
+</div>
+<div *ngIf="posts.length <= 0">
+  <h4>No posts added yet!</h4>
+  <div class="divider margintop40 marginbot40"></div>
+</div>
