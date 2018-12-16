@@ -1,0 +1,59 @@
+<!-- Start inner head -->
+<div class="inner-head bg-animate" style="background-image: url(assets/images/creat.jpg);">
+  <!-- Start Animated Background -->
+  <div class="fixed-page" style="background-image: 'assets/images/creat.jpg'"></div>
+  <!-- End Animated Background -->
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-8 col-md-offset-2">
+        <h3>Create your event</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End inner head -->
+
+<div class="clearfix"></div>
+
+<div class="inner-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 title-section">
+        <h4 class="title"><span>Event</span>Create your event now!</h4>
+        <div class="line"><i class="icon icon-24 icon-eye"></i></div>
+      </div>
+      <form [formGroup]="form" (submit)="onSaveEvent()">
+        <ul class="listForm">
+          <li>
+            <label>Event name :</label>
+            <input class="form-control input-name input-lg" type="text" formControlName="name" placeholder="Enter event name . . ." />
+            <div class="validation"></div>
+          </li>
+          <li>
+            <label>Category :</label>
+            <select class="form-control input-email input-lg" formControlName="category" >
+              <option value="general">general</option>
+              <option value="sport">sport</option>
+            </select>
+            <div class="validation"></div>
+          </li>
+          <li class="full-list">
+            <label>Description :</label>
+            <textarea class="form-control input-lg" rows="8" formControlName="description" placeholder="Please write some details about the event"></textarea>
+            <div class="validation"></div>
+          </li>
+          <li>
+            <button  class="btn btn-demo" (click)="filePicker.click()">Pick Image</button>
+            <input type="file" #filePicker (change)="onImagePicked($event)">
+            <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid">
+              <img [src]="imagePreview" [alt]="form.value.name">
+            </div>
+          </li>
+          <li class="full-list last-list">
+            <input type="submit" value="Create event" class="btn btn-primary btn-lg btn-block" name="Submit" />
+          </li>
+        </ul>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,4 @@
+const path = require("path");
 const  express = require('express');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
@@ -17,6 +18,7 @@ mongoose.connect('mongodb+srv://root:lD4na479b7LxXpkD@cluster0-iv1ig.mongodb.net
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use("/images", express.static(path.join("backend/images")));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");

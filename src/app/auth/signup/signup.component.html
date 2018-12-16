@@ -10,19 +10,35 @@
     </div>
     <!-- End Title -->
     <form (submit)="onSignup(signupForm)" #signupForm="ngForm">
-      <ul class="listForm listFormLogin">
+      <ul class="listForm">
         <li>
-          <input class="form-control" type="text" name="email" #emailInput="ngModel" ngModel required  placeholder="Email" />
+          <input class="form-control" type="email" name="email" #emailInput="ngModel" ngModel required  placeholder="Email" />
           <div class="validation" *ngIf="emailInput.invalid && emailInput.touched">Please enter a valid email.</div>
+        </li>
+        <li>
+          <input class="form-control" type="text" name="username" #usernameInput="ngModel" ngModel required  placeholder="User name" />
+          <div class="validation" *ngIf="usernameInput.invalid && usernameInput.touched">Please enter a valid username.</div>
+        </li>
+        <li>
+          <input class="form-control" type="text" name="firstname" #firstnameInput="ngModel" ngModel required  placeholder="your first name" />
+          <div class="validation" *ngIf="firstnameInput.invalid && firstnameInput.touched">Please enter a valid name.</div>
+        </li>
+        <li>
+          <input class="form-control" type="text" name="lastname" #lastnameInput="ngModel" ngModel required  placeholder="your last name" />
+          <div class="validation" *ngIf="lastnameInput.invalid && lastnameInput.touched">Please enter a valid name.</div>
         </li>
         <li>
           <input class="form-control" type="password" name="password" placeholder="Password" ngModel #passwordInput="ngModel" required/>
           <div class="validation" *ngIf="passwordInput.invalid && passwordInput.touched">Please enter a valid password.</div>
         </li>
         <li>
+          <input class="form-control" type="password" name="passwordConfirm" placeholder="Confirm Password" ngModel #passwordconfirmInput="ngModel" required/>
+          <div class="validation" *ngIf="passwordconfirmInput.invalid && passwordconfirmInput.touched">not matched.</div>
+        </li>
+        <li class="full-list last-list">
           <input type="submit" value="Sign up" class="btn btn-info btn-lg btn-block" name="Submit" />
         </li>
-        <li style="text-align: center; text-transform: uppercase; text-decoration: underline">
+        <li class="full-list last-list" style="text-align: center; text-transform: uppercase; text-decoration: underline; margin-top: 30px;">
           <a [routerLink]="['/home']" style="color: #77b3d4">Send Me to Home page</a>
         </li>
       </ul>

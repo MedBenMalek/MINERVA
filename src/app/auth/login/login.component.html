@@ -9,22 +9,25 @@
       </div>
     </div>
     <!-- End Title -->
-    <ul class="listForm listFormLogin">
-      <li>
-        <input class="form-control" type="text" name="name" placeholder="Email" />
-        <div class="validation"></div>
-      </li>
-      <li>
-        <input class="form-control" type="text" name="email" placeholder="Password"/>
-        <div class="validation"></div>
-      </li>
-      <li>
-        <input type="submit" value="Login" class="btn btn-primary btn-lg btn-block" name="Submit" />
-      </li>
-      <li style="text-align: center; text-transform: uppercase; text-decoration: underline">
-        <a [routerLink]="['/home']">Send Me to Home page</a>
-      </li>
-    </ul>
+    <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+      <ul class="listForm listFormLogin">
+        <li>
+          <input class="form-control" type="email" name="email" placeholder="Email" ngModel #emailInput="ngModel" required email />
+          <div class="validation" *ngIf="emailInput.invalid">Please enter a valid email.</div>
+        </li>
+        <li>
+          <input class="form-control" type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" required/>
+          <div class="validation" *ngIf="passwordInput.invalid">Please enter a valid password.</div>
+        </li>
+        <li>
+          <input type="submit" value="Login" class="btn btn-primary btn-lg btn-block" name="Submit" />
+        </li>
+        <li style="text-align: center; text-transform: uppercase; text-decoration: underline">
+          <a [routerLink]="['/home']">Send Me to Home page</a>
+        </li>
+      </ul>
+    </form>
+
   </div>
 </section>
 <!-- End About -->

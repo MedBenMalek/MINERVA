@@ -18,7 +18,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class="assets/navbar-brand" href="">
-          <img src="assets/images/brand/logo.png" class="logo" alt="">
+         <h4 class="logo" style="margin: 15px">MINERVA</h4>
         </a>
       </div>
 
@@ -26,9 +26,13 @@
       <div class="collapse navbar-collapse" id="myMenu">
         <ul class="nav navbar-nav navbar-right">
           <li><a routerLink="/home">Home</a></li>
-          <li><a routerLink="/blog">Blog</a></li>
           <li><a routerLink="/home">Contact Us</a></li>
-          <a [routerLink]="['/login']" class="btn btn-info btn-sm login-btn">Login</a>
+          <li><a *ngIf="!userIsAuthenticated" routerLink="/hire-us">Hire us</a></li>
+          <li><a *ngIf="userIsAuthenticated" routerLink="/create-event">Create event</a></li>
+          <a *ngIf="!userIsAuthenticated" [routerLink]="['/login']" class="btn btn-info btn-sm login-btn">Login</a>
+          <li *ngIf="!userIsAuthenticated"><a [routerLink]="['/sign-up']">Sign up</a></li>
+          <li *ngIf="userIsAuthenticated"><a>{{userInfo.username}}</a></li>
+          <button *ngIf="userIsAuthenticated" (click)="onLogout()" class="btn btn-info btn-sm login-btn">Logout</button>
         </ul>
       </div>
     </div>

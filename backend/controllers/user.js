@@ -7,7 +7,11 @@ exports.createUser = (req, res, next) => {
   bcrypt.hash(req.body.password, 10).then(hash => {
     const user = new User({
       email: req.body.email,
-      password: hash
+      username: req.body.username,
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      role: req.body.role,
+      password: hash,
     });
     user
       .save()
@@ -19,7 +23,7 @@ exports.createUser = (req, res, next) => {
       })
       .catch(err => {
         res.status(500).json({
-          message: "Invalid authentication credentials!"
+          error: err
         });
       });
   });
@@ -44,17 +48,21 @@ exports.userLogin = (req, res, next) => {
         });
       }
       const token = jwt.sign(
-        { email: fetchedUser.email, userId: fetchedUser._id },
-        process.env.JWT_KEY,
+        { email: fetchedUser.email,
+          userId: fetchedUser._id,
+          username: fetchedUser.username
+        },
+        "secret_this_should_be_longer",
         { expiresIn: "1h" }
       );
       res.status(200).json({
         token: token,
         expiresIn: 3600,
-        userId: fetchedUser._id
+        user: fetchedUser
       });
     })
     .catch(err => {
+      console.log(err);
       return res.status(401).json({
         message: "Invalid authentication credentials!"
       });

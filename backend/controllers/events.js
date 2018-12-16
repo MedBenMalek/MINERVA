@@ -14,43 +14,34 @@ exports.createEvent = (req, res, next) => {
     imagePath: url + "/images/" + req.file.filename,
     creator: req.userData.userId
   });
-  post
+  event
     .save()
     .then(created => {
       res.status(201).json({
         message: "Event added successfully",
-        post: {
+        event: {
           ...created,
           id: created._id
         }
       });
     })
     .catch(error => {
+      console.log(error);
       res.status(500).json({
-        message: "Creating a event failed!"
+        message: "Creating event failed!"
       });
     });
 };
 
 
 exports.getEvents = (req, res, next) => {
-  const pageSize = +req.query.pagesize;
-  const currentPage = +req.query.page;
   const Query = Event.find();
-  let fetched;
-  if (pageSize && currentPage) {
-    Query.skip(pageSize * (currentPage - 1)).limit(pageSize);
-  }
   Query
+    .limit(4)
     .then(documents => {
-      fetched = documents;
-      return Event.count();
-    })
-    .then(count => {
       res.status(200).json({
         message: "Events fetched successfully!",
-        events: fetched,
-        maxPosts: count
+        events: documents,
       });
     })
     .catch(error => {

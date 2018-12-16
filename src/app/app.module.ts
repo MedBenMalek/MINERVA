@@ -18,6 +18,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import {AuthInterceptor} from './auth/auth-interceptor';
 import { SignupComponent } from './auth/signup/signup.component';
+import { CreateEventComponent } from './event/create-event/create-event.component';
+import { HireUsComponent } from './client/hire-us/hire-us.component';
 
 
 @NgModule({
@@ -33,6 +35,8 @@ import { SignupComponent } from './auth/signup/signup.component';
     HeaderComponent,
     FooterComponent,
     SignupComponent,
+    CreateEventComponent,
+    HireUsComponent,
   ],
   imports: [
     BrowserModule,

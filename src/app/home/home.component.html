@@ -1,104 +1,58 @@
 <!-- Start Home -->
 <section id="AnimatedBg" class="home bg-animate">
   <div class="home-container">
-  </div>
-  <div class="street"></div>
-</section>
-<!-- End Home -->
-<div class="clearfix"></div>
-
-<!-- Start Work It -->
-<div class="dark">
-  <div class="container">
     <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <!-- Start Feature Three -->
-        <div class="row">
-          <div class="title-section">
-            <h1 class="title">Hello Everyone!</h1>
-          </div>
-        </div>
-        <!-- End Feature Three -->
+      <div class="col-md-8 col-md-offset-2 text-center">
+        <h1 style="font-size: 60px;">MANERVA EVENTS</h1> <br>
+        <h4 style="font-size: 20px;">Your event should be perfect!</h4><br>
+        <a href="singlepost.html" class="btn btn-success btn-lg">HIRE US</a>
       </div>
     </div>
   </div>
-</div>
-<!-- End Work It -->
+</section>
+<!-- End Home -->
 
 <div class="clearfix"></div>
 
-<!-- Start Features -->
-<section id="features">
+<!-- Start Article -->
+<section id="blog" class="gray">
   <div class="container">
     <!-- Start Title -->
     <div class="row">
       <div class="col-md-10 col-md-offset-1 title-section">
-        <h4 class="title"><span>Our Features</span> The reason why choose us</h4>
-        <div class="line"><i class="icon icon-24 icon-trophy"></i></div>
+        <h4 class="title"><span>Last Events</span> Latest events</h4>
+        <div class="line"><i class="icon icon-24 icon-compose"></i></div>
       </div>
     </div>
     <!-- End Title -->
-    <!-- Start Features -->
-    <div class="row wrap-feature-two">
-      <div class="col-md-4">
-        <!-- Start Feature Two Left -->
-        <ul class="feature-two left">
-          <li>
-            <i class="icon icon-64 icon-tablet"></i>
-            <h5>Responsive</h5>
-            <p>
-              Hrrem volutpat per in, te hinc essent mea ei pro corrumpit.
-            </p>
-          </li>
-          <li>
-            <i class="icon icon-64 icon-clipboard"></i>
-            <h5>Documentation</h5>
-            <p>
-              Hrrem volutpat per in, te hinc essent mea ei pro corrumpit.
-            </p>
-          </li>
-          <li>
-            <i class="icon icon-64 icon-hourglass"></i>
-            <h5>24/7 Support</h5>
-            <p>
-              Hrrem volutpat per in, te hinc essent mea ei pro corrumpit.
-            </p>
-          </li>
-        </ul>
-        <!-- End Feature Two Left -->
-      </div>
-      <div class="col-md-4">
-        <img src="assets/images/features/man.png" class="img-responsive img-feature-two" alt="">
-      </div>
-      <div class="col-md-4">
-        <!-- Start Feature Two Right -->
-        <ul class="feature-two right">
-          <li>
-            <i class="icon icon-64 icon-rocket"></i>
-            <h5>Flat Design</h5>
-            <p>
-              Hrrem volutpat per in, te hinc essent mea ei pro corrumpit.
-            </p>
-          </li>
-          <li>
-            <i class="icon icon-64 icon-gamecontroller"></i>
-            <h5>Easy to use</h5>
-            <p>
-              Hrrem volutpat per in, te hinc essent mea ei pro corrumpit.
-            </p>
-          </li>
-          <li>
-            <i class="icon icon-64 icon-interstate"></i>
-            <h5>Plag & play</h5>
-            <p>
-              Hrrem volutpat per in, te hinc essent mea ei pro corrumpit.
-            </p>
-          </li>
-        </ul>
-        <!-- End Feature Two Right -->
+
+    <!-- Start Blog -->
+    <div class="row">
+      <div class="masonry wrap-post" style="">
+        <div *ngFor="let e of events" style="margin-bottom: 10px" class="grid-item col-md-6 col-sm-12 col-xs-12">
+          <!-- Start Article 01 -->
+          <div class="row post" >
+            <div class="col-md-6 col-sm-6 img-post">
+              <img src="assets/images/blog/1.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="col-md-6 col-sm-6 content-post">
+              <h5><a href="#">{{e.name}}</a></h5>
+              <ul class="meta-post">
+                <li><a href="#"><span class="fa fa-calendar"></span> 06/10/2015</a></li>
+                <li><a href="#"><span class="fa fa-thumb-tack"></span> App</a></li>
+                <li><a href="#"><span class="fa fa-comment-o"></span> 3</a></li>
+              </ul>
+              <a href="singlepost.html" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+          <!-- End Article 01 -->
+        </div>
+
       </div>
     </div>
-    <!-- End Features -->
+    <!-- End Blog -->
   </div>
 </section>
-<!-- End Features -->
+<!-- End Article -->
+
+

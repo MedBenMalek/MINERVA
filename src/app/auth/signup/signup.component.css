@@ -6,8 +6,3 @@
   transform: translate(-50%, -50%);
 }
 
-.listFormLogin {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
