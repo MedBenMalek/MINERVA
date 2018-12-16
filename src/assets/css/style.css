@@ -1231,7 +1231,8 @@ Inner page
 .inner-head h3{
 	color:#fff;
 	font-size:46px;
-	text-shadow: 4px 4px 0px #538f9e;
+	text-shadow: 2px 2px 0px rgba(39, 23, 18, 0.89);
+  text-transform: uppercase;
 }
 
 .inner-page{

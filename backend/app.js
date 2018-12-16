@@ -5,8 +5,10 @@ const mongoose = require('mongoose');
 
 const userRoutes = require("./routes/user");
 const eventRoutes = require("./routes/events");
+const demandRoutes = require("./routes/demands");
 
 const app = express();
+
 mongoose.connect('mongodb+srv://root:lD4na479b7LxXpkD@cluster0-iv1ig.mongodb.net/freeStyle',  { useNewUrlParser: true })
   .then(() => {
     console.log('Connected to database successfully');
@@ -19,6 +21,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use("/images", express.static(path.join("backend/images")));
+
+app.use('api/chat',(req, res, next) => {s
+  req.js({
+    msg: "ok",
+  });
+});
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -35,5 +43,7 @@ app.use((req, res, next) => {
 
 app.use("/api/user", userRoutes);
 app.use("/api/event", eventRoutes);
+app.use("/api/demand", demandRoutes);
+
 
 module.exports = app;

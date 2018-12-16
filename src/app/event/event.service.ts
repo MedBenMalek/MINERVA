@@ -43,7 +43,7 @@ export class EventService {
         Data
       )
       .subscribe(responseData => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/success']);
       });
   }
 

@@ -1,0 +1,59 @@
+<!-- Start inner head -->
+<div class="inner-head bg-animate" style="background-image: url(assets/images/creat2.jpg);">
+  <!-- Start Animated Background -->
+  <div class="fixed-page" style="background-image: 'assets/images/creat.jpg'"></div>
+  <!-- End Animated Background -->
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-8 col-md-offset-2">
+        <h3>List of demands</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End inner head -->
+
+<div class="clearfix"></div>
+
+<div class="inner-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 title-section">
+        <h4 class="title"><span>Select category</span>Display list of clients demands</h4><br>
+        <hr>
+        <div class="flexx">
+          <a (click)="categorie = 'wedding'">Wedding</a>
+          <a (click)="categorie = 'general'">general</a>
+          <a (click)="categorie = 'sport'">sport</a>
+          <a (click)="categorie = 'entertainment'">entertainment</a>
+        </div>
+        <hr>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3"*ngFor="let d of demands">
+            <!-- Start Pricing Info -->
+            <div class="table-price info" [ngClass]="{'thisclass' : d.category !== categorie}">
+              <div class="title-price" >
+                <h4>{{d.name}}</h4>
+              </div>
+              <ul class="list-feature" style="margin-top: 10px;">
+                <li class="current"><b>Category:</b> {{d.category}}</li>
+                <li><b>Client name: </b> {{d.firstname}} {{d.lastname}}</li>
+                <li class="current"><b>Client phone</b> {{d.phone}}</li>
+                <li><b>Email: </b> {{d.email}} </li>
+                <li class="current"><b>No</b> Support</li>
+              </ul>
+              <div class="footer-price">
+                <a href="#" class="btn btn-info" [routerLink]="['/create-event', d._id]">Create Now</a>
+              </div>
+            </div>
+
+            <!-- End Pricing Info -->
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

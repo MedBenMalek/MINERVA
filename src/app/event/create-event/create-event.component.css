@@ -10,3 +10,39 @@ input[type="file"] {
 .image-preview img {
   height: 100%;
 }
+.cin{
+  display: flex;
+  width: 100%;
+  max-height: 600px;
+  background-color: #f3f3f3;
+  justify-content: space-between;
+}
+
+.flaxi{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  max-width: 45%;
+  position: relative;
+}
+
+.flaxi img {
+  cursor: pointer;
+  position: relative;
+  padding: 10px;
+}
+
+.stage1 {
+  display: flex;
+  width: 100%;
+  min-height: 80px;
+}
+
+.stage {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  min-height: 80px;
+  background-color: #f3f3f3;
+}

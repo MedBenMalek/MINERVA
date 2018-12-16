@@ -19,7 +19,8 @@
   <div class="container">
     <div class="row">
       <div class="col-md-10 col-md-offset-1 title-section">
-        <h4 class="title"><span>Event</span>Create your event now!</h4>
+        <h4 class="title"><span>Event</span>Create your event now!</h4><br>
+        <button routerLink="/show-demands" class="btn btn-info btn-lg" style="margin-bottom: 15px">Show Demands</button>
         <div class="line"><i class="icon icon-24 icon-eye"></i></div>
       </div>
       <form [formGroup]="form" (submit)="onSaveEvent()">
@@ -32,8 +33,10 @@
           <li>
             <label>Category :</label>
             <select class="form-control input-email input-lg" formControlName="category" >
-              <option value="general">general</option>
-              <option value="sport">sport</option>
+              <option [value]="'general'">general</option>
+              <option [value]="'wedding'">wedding</option>
+              <option [value]="'entertainment'">entertainment</option>
+              <option [value]="'sport'">sport</option>
             </select>
             <div class="validation"></div>
           </li>
@@ -49,11 +52,52 @@
               <img [src]="imagePreview" [alt]="form.value.name">
             </div>
           </li>
+          <div *ngIf="mode === 'advanced'">
+            <div class="stage" ><h4 style="margin-left: 45%">Stage</h4></div>
+            <div class="cin">
+              <div class="flaxi">
+                <img (click)="select01()" [(src)]="icon01" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img  (click)="select02()" [src]="icon02" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img  (click)="select03()" [src]="icon03" width="95px" height="80px">
+              </div>
+              <div class="flaxi">
+                <img  (click)="select04()" [src]="icon04" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+                <img [src]="icon1" width="95px" height="80px">
+              </div>
+            </div>
+            <div class="stage1" ><h4 style="margin-left: 45%"></h4></div>
+          </div>
           <li class="full-list last-list">
             <input type="submit" value="Create event" class="btn btn-primary btn-lg btn-block" name="Submit" />
           </li>
         </ul>
       </form>
+
     </div>
   </div>
 </div>

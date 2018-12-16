@@ -4,7 +4,10 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000/api'
+  apiUrl: 'http://localhost:3000/api',
+  dialogflow: {
+    EventBot: 'f1607df391794b27b2e30bffc5a663cb'
+  }
 };
 
 /*

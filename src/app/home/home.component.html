@@ -5,7 +5,7 @@
       <div class="col-md-8 col-md-offset-2 text-center">
         <h1 style="font-size: 60px;">MANERVA EVENTS</h1> <br>
         <h4 style="font-size: 20px;">Your event should be perfect!</h4><br>
-        <a href="singlepost.html" class="btn btn-success btn-lg">HIRE US</a>
+        <a routerLink="/hire-us" class="btn btn-success btn-lg">HIRE US</a>
       </div>
     </div>
   </div>
@@ -33,7 +33,7 @@
           <!-- Start Article 01 -->
           <div class="row post" >
             <div class="col-md-6 col-sm-6 img-post">
-              <img src="assets/images/blog/1.jpg" class="img-responsive" alt="">
+              <img [src]="e.imagePath" class="img-responsive" alt="">
             </div>
             <div class="col-md-6 col-sm-6 content-post">
               <h5><a href="#">{{e.name}}</a></h5>
@@ -42,7 +42,7 @@
                 <li><a href="#"><span class="fa fa-thumb-tack"></span> App</a></li>
                 <li><a href="#"><span class="fa fa-comment-o"></span> 3</a></li>
               </ul>
-              <a href="singlepost.html" class="btn btn-primary">Read more</a>
+              <a routerLink="/home" class="btn btn-primary">Read more</a>
             </div>
           </div>
           <!-- End Article 01 -->

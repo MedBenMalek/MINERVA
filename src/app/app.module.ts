@@ -20,7 +20,13 @@ import {AuthInterceptor} from './auth/auth-interceptor';
 import { SignupComponent } from './auth/signup/signup.component';
 import { CreateEventComponent } from './event/create-event/create-event.component';
 import { HireUsComponent } from './client/hire-us/hire-us.component';
+import { SuccesComponent } from './client/succes/succes.component';
+import { ShowDemandsComponent } from './client/show-demands/show-demands.component';
+import { CreateEventDemandComponent } from './event/create-event-demand/create-event-demand.component';
+import { ChatBotComponent } from './livechat/chat-bot/chat-bot.component';
+import {SocketIoConfig, SocketIoModule} from 'ngx-socket-io';
 
+const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
 @NgModule({
   declarations: [
@@ -37,6 +43,10 @@ import { HireUsComponent } from './client/hire-us/hire-us.component';
     SignupComponent,
     CreateEventComponent,
     HireUsComponent,
+    SuccesComponent,
+    ShowDemandsComponent,
+    CreateEventDemandComponent,
+    ChatBotComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +55,8 @@ import { HireUsComponent } from './client/hire-us/hire-us.component';
     ReactiveFormsModule,
     HttpClientModule,
     NgxEditorModule,
-    FormsModule
+    FormsModule,
+    SocketIoModule.forRoot(config)
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }

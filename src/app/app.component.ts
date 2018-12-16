@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
     this.authService.autoAuthUser();
     this.router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) {
-        this.islogin = e.url === '/login' || e.url === '/sign-up';
+        this.islogin = e.url === '/login' || e.url === '/sign-up' || e.url ==='/success';
       }
     });
     console.log(this.islogin);

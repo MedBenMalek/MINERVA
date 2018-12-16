@@ -1,5 +1,5 @@
 <!-- Start inner head -->
-<div class="inner-head bg-animate" style="background-image: url(assets/images/creat.jpg);">
+<div class="inner-head bg-animate" style="background-image: url(assets/images/creat4.jpg);">
   <!-- Start Animated Background -->
   <div class="fixed-page" style="background-image: 'assets/images/creat.jpg'"></div>
   <!-- End Animated Background -->
@@ -24,29 +24,34 @@
       </div>
       <form (submit)="onSubmiHire(Form)" #Form="ngForm">
         <ul class="listForm">
+          <li class="full-list  ">
+            <label>Event name:</label>
+            <input class="form-control input-name input-lg" type="text" name="name" placeholder="Enter your event name . . ." ngModel #enameInput="ngModel" required />
+            <div class="validation"></div>
+          </li>
           <li>
             <label>First name:</label>
-            <input class="form-control input-name input-lg" type="text" name="firstname" placeholder="Enter event name . . ." />
+            <input class="form-control input-name input-lg" type="text" name="firstname" placeholder="Enter your first name . . ." ngModel #fnameInput="ngModel" required />
             <div class="validation"></div>
           </li>
           <li>
             <label>Last name:</label>
-            <input class="form-control input-name input-lg" type="text" name="lastname" placeholder="Enter event name . . ." />
+            <input class="form-control input-name input-lg" type="text" name="lastname" placeholder="Enter last name  . . ." ngModel #lnameInput="ngModel" required  />
             <div class="validation"></div>
           </li>
           <li>
             <label>Email:</label>
-            <input class="form-control input-name input-lg" type="text" name="firstname" placeholder="Enter event name . . ." />
+            <input class="form-control input-name input-lg" type="email" name="email" placeholder="Enter your email . . ." ngModel #emailInput="ngModel" required  />
             <div class="validation"></div>
           </li>
           <li>
             <label>Phone:</label>
-            <input class="form-control input-name input-lg" type="text" name="lastname" placeholder="Enter event name . . ." />
+            <input class="form-control input-name input-lg" type="text" name="phone" placeholder="Enter your phone . . ." ngModel #phoneInput="ngModel" required  />
             <div class="validation"></div>
           </li>
           <li class="full-list">
-            <label>Category :</label>
-            <select class="form-control input-email input-lg" name="category" #t (change)="callType(t.value)" >
+            <label>Choose an event category :</label>
+            <select class="form-control input-email input-lg" name="category" #t (change)="callType(t.value)" ngModel #categorieInput="ngModel" required  >
               <option [value]="'general'">general</option>
               <option [value]="'wedding'">wedding</option>
               <option [value]="'entertainment'">entertainment</option>
@@ -57,24 +62,51 @@
 
 
           <div *ngIf="type === 'general'" >
-            <li>
-              <label>Category :</label>
-              <select class="form-control input-email input-lg" name="category" >
-                <option value="general">general</option>
-                <option value="wedding">wedding</option>
-                <option value="entertainment">entertainment</option>
-                <option value="sport">sport</option>
+          <li>
+            <label>Category :</label>
+            <select class="form-control input-email input-lg" name="category">
+              <option value="general">general</option>
+              <option value="wedding">wedding</option>
+              <option value="entertainment">entertainment</option>
+              <option value="sport">sport</option>
+            </select>
+          </li>
+          <li>
+            <label>Phone:</label>
+            <input class="form-control input-name input-lg" type="text" name="lastname" placeholder="Enter event name . . ." />
+            <div class="validation"></div>
+          </li>
+        </div>
+
+        <div *ngIf="type === 'wedding'" >
+          <li>
+              <label>Decoration :</label>
+              <select class="form-control input-email input-lg" name="decoration" ngModel #decorationInput="ngModel"  >
+                <option value="flowers">flowers</option>
+                <option value="cristals">Cristals</option>
+                <option value="your-choice">Your choice</option>
               </select>
             </li>
-            <li>
-              <label>Phone:</label>
-              <input class="form-control input-name input-lg" type="text" name="lastname" placeholder="Enter event name . . ." />
-              <div class="validation"></div>
-            </li>
-          </div>
+          <li>
+            <label>Type of music :</label>
+            <select class="form-control input-email input-lg" name="musictype" ngModel #musicTypeInput="ngModel"  >
+              <option value="classic">classic</option>
+              <option value="Traditional">Traditional</option>
+              <option value="DJ">DJ</option>
+            </select>
+          </li>
+          <li class="full-list">
+            <label>Location :</label>
+            <select class="form-control input-email input-lg" name="location" ngModel #locationInput="ngModel"  >
+              <option value="Movenpick">Movenpick Hotel</option>
+              <option value="Myway">Myway Lac</option>
+              <option value="goldenTulip">Golden Tulip</option>
+            </select>
+          </li>
+        </div>
 
           <li class="full-list last-list">
-            <input type="submit" value="Create event" class="btn btn-primary btn-lg btn-block" name="Submit" />
+            <input type="submit" value="Send" class="btn btn-success btn-lg btn-block" name="Submit" />
           </li>
         </ul>
       </form>
